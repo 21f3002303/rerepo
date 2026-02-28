@@ -33,20 +33,4 @@ jobs:
           git add logs/daily-log.txt
           git commit -m "chore: daily automated update $(date -u '+%Y-%m-%d')"
           git push
-```
 
----
-
-## Why This Happens
-
-By default, GitHub restricts `GITHUB_TOKEN` to **read-only** in many repo settings. The `permissions: contents: write` line explicitly grants the token push access.
-
----
-
-## If It Still Fails — Enable via Repo Settings
-
-Go to your repo on GitHub:
-```
-Settings → Actions → General → Workflow permissions
-→ Select "Read and write permissions"
-→ Save
